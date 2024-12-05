@@ -17,11 +17,11 @@ function Signup() {
     const create = async (data) => {
         setError("")
         try {
-            const userData = await authService.createAccount(data)
+            const userData = await authService.createAccount(data);
             if (userData) {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
-                    dispatch(login(userData))
+                    dispatch(login(userData));
                     navigate("/")
                 }
             }
@@ -49,43 +49,43 @@ function Signup() {
                     </Link>
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-
-                <form onSubmit={handleSubmit(create)}>
-                    <div className='space-y-5'>
-                        <Input
-                            label="Full Name: "
-                            type="text"
-                            placeholder="Enter your full name"
-                            {...register("name", {
-                                required: true,
-                            })}
-                        />
-                        <Input
-                            label="Email: "
-                            placeholder="Enter your email"
-                            type="email"
-                            {...register("email", {
-                                required: true,
-                                validate: {
-                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                        "Email address must be a valid address",
-                                }
-                            })}
-                        />
-                        <Input
-                            label="Password: "
-                            placeholder="Enter your password"
-                            type="password"
-                            {...register("password", {
-                                required: "true",
-                            })}
-                        />
-                        <Button type="submit" className="w-full">
-                            Create Account
-                        </Button>
-                    </div>
-                </form>
             </div>
+
+            <form onSubmit={handleSubmit(create)}>
+                <div className='space-y-5'>
+                    <Input
+                        label="Full Name: "
+                        type="text"
+                        placeholder="Enter your full name"
+                        {...register("name", {
+                            required: true,
+                        })}
+                    />
+                    <Input
+                        label="Email: "
+                        placeholder="Enter your email"
+                        type="email"
+                        {...register("email", {
+                            required: true,
+                            validate: {
+                                matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                                    "Email address must be a valid address",
+                            }
+                        })}
+                    />
+                    <Input
+                        label="Password: "
+                        placeholder="Enter your password"
+                        type="password"
+                        {...register("password", {
+                            required: "true",
+                        })}
+                    />
+                    <Button type="submit" className="w-full">
+                        Create Account
+                    </Button>
+                </div>
+            </form>
 
         </div>
     )

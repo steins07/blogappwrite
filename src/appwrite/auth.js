@@ -22,6 +22,11 @@ export class AuthService {
             }
         } catch (error) {
             console.log("Appwrite Service :: createAccount :: :: error : ", error);
+            if (error.code === 409) {
+                throw new Error('Email address is already in use.');
+            } else {
+                throw error;
+            }
         }
     }
 

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useId } from 'react'
 
 function Select({
@@ -19,6 +20,7 @@ function Select({
                 className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
                 id={id}
                 {...props}
+                ref={ref}
             >
                 {options?.map((option) => (
                     <option key={option}>
@@ -32,3 +34,9 @@ function Select({
 }
 
 export default React.forwardRef(Select)
+
+Select.propTypes = {
+    options: PropTypes.array.isRequired,
+    label: PropTypes.string,
+    className: PropTypes.string,
+}

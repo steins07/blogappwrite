@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -20,4 +21,7 @@ export default function Protected({ children, authentication = true }) {
     return loader ? <h1>Loading....</h1> : <>{children}</>
 }
 
-
+Protected.propTypes = {
+    children: PropTypes.node.isRequired,
+    authentication: PropTypes.bool,
+}

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 function Container({ children }) {
     return <div
@@ -7,3 +8,7 @@ function Container({ children }) {
 }
 
 export default Container
+
+Container.propTypes = {
+    children: PropTypes.node
+}

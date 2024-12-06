@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useId } from "react"
 
 const Input = React.forwardRef(function Input(
@@ -32,3 +33,9 @@ const Input = React.forwardRef(function Input(
 
 
 export default Input
+
+Input.propTypes = {
+    label: PropTypes.string,
+    type: PropTypes.string,
+    className: PropTypes.string,
+}

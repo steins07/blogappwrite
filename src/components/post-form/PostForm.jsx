@@ -4,6 +4,7 @@ import { Button, Input, Select, RTE } from "../index"
 import appwriteService from "../../appwrite/config"
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import PropTypes from 'prop-types'
 
 
 function PostForm({ post }) {
@@ -121,3 +122,15 @@ function PostForm({ post }) {
 }
 
 export default PostForm
+
+PostForm.propTypes = {
+    post: PropTypes.shape({
+        $id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        status: PropTypes.oneOf(["active", "inactive"]).isRequired,
+        featuredImage: PropTypes.string,
+        userId: PropTypes.string.isRequired,
+    }),
+}

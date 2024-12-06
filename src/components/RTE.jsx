@@ -1,6 +1,8 @@
 import { Editor } from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form'
 import conf from '../conf/conf'
+import PropTypes from 'prop-types';
+
 
 
 function RTE({ name, control, label, defaultValue = "" }) {
@@ -61,3 +63,13 @@ function RTE({ name, control, label, defaultValue = "" }) {
 }
 
 export default RTE
+
+
+
+RTE.propTypes = {
+    name: PropTypes.string.isRequired,
+    control: PropTypes.object.isRequired,
+    label: PropTypes.string,
+    defaultValue: PropTypes.string
+};
+

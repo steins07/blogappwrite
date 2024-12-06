@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 
 function Button({
     children,
@@ -19,3 +20,11 @@ function Button({
 }
 
 export default Button
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+    type: PropTypes.string,
+    bgColor: PropTypes.string,
+    textColor: PropTypes.string,
+    className: PropTypes.string
+}

@@ -1,9 +1,14 @@
 # React + Vite
+<------------------------------------------------------------------------------------------------->
+This is a blog site that is built using React bundled with Vite and uses Appwrite backend services.
+<------------------------------------------------------------------------------------------------->
+Packages used in this project are:
+-React Hook Form
+-TinyMCE
+-React Redux Tool Kit, etc
+<---------------------------------------->
+You can get live preview on following link:
+https://blogappwrite-idcz70652-steins07s-projects.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 "# blogappwrite" 

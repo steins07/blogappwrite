@@ -2,10 +2,26 @@ import { Link } from 'react-router-dom'
 import { Container, Logo, LogoutBtn } from '../index'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import authService from '../../appwrite/auth'
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.status)
     const navigate = useNavigate()
+    const [username, setUsername] = useState(null);
+
+
+    useEffect(() => {
+        const fetchUser = async () => {
+          const user = await authService.getCurrentUser();
+          if (user) {
+            setUsername(user.name);
+          }
+        };
+    
+        fetchUser();
+      }, [authStatus]);
+    
 
     const navItems = [
         {
@@ -43,11 +59,19 @@ function Header() {
                 <nav
                     className='flex'
                 >
-                    <div className="mr-4">
-                        <Link to='/'>
-                            <Logo width='70px' />
+                    {/* Logo Section */}
+                    <div className="mr-4 flex items-center">
+                        <Link to="/">
+                            <Logo width="80px" />
                         </Link>
+
+                        {/* username */}
+                        <p className="flex ml-auto px-7 text-black font-bold text-sm">
+                           <em>{username ? "Hello, "+username.toUpperCase() : "Guest User"}</em> 
+                        </p>
                     </div>
+
+
                     <ul
                         className='flex ml-auto'
                     >

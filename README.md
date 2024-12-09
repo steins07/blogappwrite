@@ -6,9 +6,14 @@ Packages used in this project are:<br/>
 -React Hook Form<br/>
 -TinyMCE<br/>
 -React Redux Tool Kit, etc<br/>
+<ol>
+  <li>
+    hello
+  </li>
+</ol>
 <----------------------------------------><br/>
 You can get live preview on following link:<br/>
-https://blogappwrite-idcz70652-steins07s-projects.vercel.app/
+https://blogappwrite-rho.vercel.app/
 <br/>
 
 
